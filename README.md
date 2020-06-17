@@ -3,7 +3,7 @@ Data Preprocessing and ML Models to Predict Psilocybin Intoxication Based on Bra
 
 A binary classifier that predicts psilocybin intoxication based on brainwaves. 
 
-#Data: 
+~~Data~~
 Data comes from a Swiss study where subjects were administered high doses, low doses, and placebo doses of psilocybin and 
 presented a range auditory and visual stimulus while their EEG was recorded. There are only 22 subjects, posing a significant
 challenge in creating a model that can generalize to new unseen subjects. At this point in time, I do not have permission to 

@@ -28,11 +28,7 @@ rule standardVec = (vec - mean)/stdev.
 Models in consideration include LSTM and 1-D convolutional neural networks
 
 ## Results:
-I am still in the process of tuning model architecture using a validation set. Validation set performance reached 70% using 
-a simple LSTM with one dense hidden layer. I was curious if generalization across subjects was possible, so admittedly I 
-evaluated this model on the test set. To my surprise, generalization seems possible even with only 22 subjects, as the
-model scored 63% accuracy on the test set. This motivates me to continue tuning the architecture and trying new things, which I
-will post here as I go. I promise not to evaluate on the test set again though before I'm done tuning :) 
+In progress... Validation set performance on subjects unseen during training is around 64% at best
 
 ## Discussion:
 Even simple LSTM models seem to be able to determine state of psilocybin intoxication based on Voltage at the scalp. Is this

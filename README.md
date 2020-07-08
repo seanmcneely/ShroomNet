@@ -25,10 +25,13 @@ Input sequences are fixed length 1-D sequences of Voltage over time at an electr
 rule standardVec = (vec - mean)/stdev. 
 
 ## Models:
-Models in consideration include LSTM and 1-D convolutional neural networks
+Models in consideration include LSTM and 1-D convolutional neural networks. The most promising model so far is the data cleaning model.
+
+## Data Cleaning Model:
+This model attempts to mimic part of the EEG data cleaning process performed in the lab. Input is 3D time series, where each dimension is a channel of EEG recording from a random time and channel from a given participant after they consumed either psilocybin or placebo. First, a 1-D convolutional layer with shared filters across all 3 dimensions attempts to identify which of the 3 input channels would result in best classification performance. Then, an LSTM model predicts state of intoxication separately for each channel, and weights these 3 predictions using a softmax of the convolutional channel selection output.
 
 ## Results:
-In progress... Validation set performance on subjects unseen during training is around 64% at best
+In progress... Validation set performance on subjects unseen during training is around 64%. It is important to note that this measures percentage of datapoints that are correctly classified as coming from a person who has ingested psilocybin or not. This does not mean psilocybin can be detected for 64% of subjects. Since each subject produces thousands of datapoints every few minutes during an EEG recording, if 64% performance is consistent for datapoints accross all subjects, then this method could predict psilocybin influence significantly more accurately than 64% through analysis of the large dataset produced during an individual EEG recording. To determine if this high classification accuracy for individuals is possible, I will have to evaluate performance for each of the subjects in my test set. 
 
 ## Discussion:
 Even simple LSTM models seem to be able to determine state of psilocybin intoxication based on Voltage at the scalp. Is this
